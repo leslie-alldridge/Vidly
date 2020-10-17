@@ -5,14 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*
-    This 
-    is
-    a
-    comment
-*@
-
-@{ 
+@{
     var className = Model.Customers.Count > 1 ? "popular" : null;
 }
 
@@ -24,10 +17,18 @@
 }
 else
 {
-    <ul>
-        @foreach (var customer in Model.Customers)
-        {
-            <li>@customer.Name</li>
-        }
-    </ul>
+    <p>These customers have watched @Model.Movie.Name before:</p>
+    <table class="table table-bordered table-hover">
+        <tr>
+            @foreach (var customer in Model.Customers)
+            {
+                <td>
+                    @Html.ActionLink(customer.Name, "Customers", new
+                    {
+                        id = customer.Id
+                    }, null)
+                </td>
+            }
+        </tr>
+    </table>
 }

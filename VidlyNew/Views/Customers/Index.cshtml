@@ -1,0 +1,13 @@
+﻿@model VidlyNew.ViewModels.CustomersViewModel
+@{
+    ViewBag.Title = "Customers";
+}
+
+<h2>Customers</h2>
+@{ foreach (var customer in @Model.Customers)
+    {
+        <p>@customer.Name</p>
+    };
+
+}
+

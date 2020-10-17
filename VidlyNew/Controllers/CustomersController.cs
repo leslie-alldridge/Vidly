@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using VidlyNew.Models;
 using VidlyNew.ViewModels;
 
 namespace VidlyNew.Controllers
 {
-    public class MoviesController : Controller
+    public class CustomersController : Controller
     {
-        [Route("movies")]
+        [Route("customers")]
         public ActionResult Index()
         {
-            var movie = new Movie() { Name = "Shrek" };
             var customers = new List<Customer>
             {
                 new Customer {Name = "Customer 1 ", Id = 1},
                 new Customer {Name = "Customer 2 ", Id = 2}
             };
 
-            var viewModel = new RandomMovieViewModel
+            var viewModel = new CustomersViewModel
             {
-                Movie = movie,
                 Customers = customers
             };
 
